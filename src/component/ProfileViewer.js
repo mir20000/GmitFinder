@@ -31,7 +31,7 @@ function ProfileViewer(){
         }
         ).then((dbData)=>{
             setAcademicInfo(dbData.data)
-            console.log(dbData.data)
+           
             
         })
     }
@@ -43,7 +43,7 @@ function ProfileViewer(){
         }
         ).then((dbData)=>{
             setSkillInfo(dbData.data)
-            console.log({skill:dbData})
+           
             
         })
     }
@@ -54,7 +54,7 @@ function ProfileViewer(){
         }
         ).then((dbData)=>{
             setAchievementInfo(dbData.data)
-            console.log({achiv:dbData})
+           
             
         })
     }
@@ -65,7 +65,6 @@ function ProfileViewer(){
         }
         ).then((dbData)=>{
             setProjectInfo(dbData.data)
-            console.log({proj:dbData})
             
         })
     }
@@ -79,7 +78,6 @@ function ProfileViewer(){
    }, []);// eslint-disable-line react-hooks/exhaustive-deps
 
 
-console.log(profileInfo)
     return(
         <>
             <div className="fontstyle bodycss p-2" style={{minHeight:"93%"}}>

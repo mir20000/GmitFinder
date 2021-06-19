@@ -29,7 +29,7 @@ function Navbars() {
                     {
                     userinfo?
                     <>
-                    <Nav.Link>
+                    <Nav.Link as={Link} to="/studentdashboard">
                         {userinfo.name}
                     </Nav.Link>
                     <Button className='rounded-pill' size="sm" onClick={()=>{handleLogout()}}>Logout</Button>

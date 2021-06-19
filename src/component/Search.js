@@ -18,7 +18,7 @@ return (
         <div className="row">
           <div className="search_wrap search_wrap_over fontstyle">
             <div className="search_box">
-              <input type="text" className="input" placeholder="search..." onChange={(e)=>{setSearch(e.target.value)}} onKeyDown={(ev)=>{if (ev.key==='Enter'){history.push(`search/${search}`)}}}/>
+              <input type="text" className="input" placeholder="Skill Search..." onChange={(e)=>{setSearch(e.target.value)}} onKeyDown={(ev)=>{if (ev.key==='Enter'){history.push(`search/${search}`)}}}/>
               <Link to={`search/${search}`} className="btn btn_common">
                 <img src={SearchIcon} alt='SearchIcon' style={{height:'75%',paddingTop:'30%'}} />
               </Link>
@@ -26,18 +26,7 @@ return (
           </div>
         </div>
         <div className="row d-flex justify-content-center ">
-          <div className="p-3">
-            <button type="button" className="btn btn-info fontstyle">All Students</button>
-          </div>
-          <div className="sm p-3">
-            <button type="button" className="btn btn-info fontstyle">High Marks Students</button>
-          </div>
-          <div className="p-3">
-            <button type="button" className="btn btn-info fontstyle">High Coding Skilled Students</button>
-          </div>
-          <div className=" p-3">
-            <button type="button" className="btn btn-info fontstyle">High Achievement Students</button>
-          </div>
+          
         </div>
       </div>
     </div>

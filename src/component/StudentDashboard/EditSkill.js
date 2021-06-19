@@ -1,10 +1,27 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row,Form,Col , Button } from 'react-bootstrap'
-// import { useState } from 'react'
-// import axios from 'axios';
+import { useState } from 'react'
+import HandleUserDetails from '../../redux/logincheck';
+import axios from 'axios';
 
 function EditSkill(props) {
+    const [skillName,setSkillName]=useState('')
+    const [date,setDate]=useState('')
 
+    var userinfo = HandleUserDetails()
+
+    function handleInsert() {
+        axios.post(
+            "http://localhost:4555/insertskill",
+            {
+                user_id:userinfo.id,
+                skill:skillName,
+                date:date
+            }
+        ).then((data)=>{
+            window.location.reload()
+        })
+    }
 
     return(
         <>
@@ -14,15 +31,21 @@ function EditSkill(props) {
         </Row>
         <Row className="d-flex justify-content-center p-3">
             <Col md="6">
-                <Form.Control placeholder="First name" />
+            <Form.Label>
+                .
+            </Form.Label>
+                <Form.Control onChange={(e)=>{setSkillName(e.target.value)}} placeholder="Skill Name" />
             </Col>
             <Col md="6">
-                <Form.Control placeholder="Last name" />
+            <Form.Label>
+                Learned Date
+            </Form.Label>
+            <Form.Control onChange={(e)=>{setDate(e.target.value)}} type="date" />
             </Col>
             
         </Row>
         <Row >
-            <Button className="mx-4">Submit For Review</Button>
+            <Button className="mx-4" onClick={()=>{handleInsert()}}>Submit For Review</Button>
         </Row>
         </Container>
         </>

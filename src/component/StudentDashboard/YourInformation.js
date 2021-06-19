@@ -31,7 +31,6 @@ function YourInformation(props) {
             }
             ).then((dbData)=>{
                 setAcademicInfo(dbData.data)
-                console.log(dbData.data)
                 
             })
         }
@@ -43,7 +42,6 @@ function YourInformation(props) {
             }
             ).then((dbData)=>{
                 setSkillInfo(dbData.data)
-                console.log({skill:dbData})
                 
             })
         }
@@ -54,7 +52,6 @@ function YourInformation(props) {
             }
             ).then((dbData)=>{
                 setAchievementInfo(dbData.data)
-                console.log({achiv:dbData})
                 
             })
         }
@@ -65,7 +62,6 @@ function YourInformation(props) {
             }
             ).then((dbData)=>{
                 setProjectInfo(dbData.data)
-                console.log({proj:dbData})
                 
             })
         }
@@ -118,6 +114,7 @@ function YourInformation(props) {
                 <tr>
                 <th>Examination Name</th>
                 <th>Organization Name</th>
+                <th>Marks</th>
                 <th>Starting Date</th>
                 <th>Ending Date</th>
                 </tr>
@@ -131,6 +128,7 @@ function YourInformation(props) {
                                 <tr key={index}>
                                     <td>{result.degree}</td>
                                     <td>{result.org_name}</td>
+                                    <td>{result.marks}</td>
                                     <td>{((result.start_date).split("T"))[0]}</td>
                                     <td>{((result.end_date).split("T"))[0]}</td>
                                    

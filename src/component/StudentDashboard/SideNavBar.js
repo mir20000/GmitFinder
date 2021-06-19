@@ -18,7 +18,7 @@ function SideNavBar(props) {
         window.addEventListener('resize', handleSize);
     }, []);
 
-    if (windowSize<992) {
+    if (windowSize<768) {
         return(
     
             <>
