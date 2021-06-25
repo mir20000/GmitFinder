@@ -18,6 +18,7 @@ function SearchResult(){
         }
         ).then((dbData)=>{
             setSearchResults(dbData.data)
+            console.log(dbData.data)
         })
     }
 
@@ -38,7 +39,7 @@ console.log(searchResults)
                                 searchResults.length!==0?
                                     searchResults.map((result,index)=>{
                                         console.log(result.user_id)
-                                        return <ProfileCard key={index} id={result.user_id}/>
+                                        return <ProfileCard key={index} skill={result.skill} id={result.user_id}/>
                                     }):<h1 className="d-flex justify-content-center text-white">No data found</h1>:
                                 <h1 className="d-flex justify-content-center text-white">Loading....</h1>
                             }

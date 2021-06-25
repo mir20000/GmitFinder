@@ -13,6 +13,7 @@ function Signup(){
     const [userType,setUserType]=useState()
     const [password,setPassword]=useState()
     const [confirmPassword,setConfirmPassword]=useState()
+    const [message,setMessage]=useState()
     //console.log([name,phone,email,dateOfBirth,gender,userType,password,confirmPassword])
     const history = useHistory()
 
@@ -28,8 +29,13 @@ function Signup(){
             gender:gender,
             dob:dateOfBirth
         }).then((response)=>{
-            console.log(response)
-            history.push('/login')
+            if (response.data.message) {
+                setMessage(response.data.message)
+            }else{
+                console.log(response)
+                history.push('/login')
+            }
+            
         })
     }
 
@@ -77,6 +83,7 @@ function Signup(){
                                 <div className="form-group">
                                 <input type="password" className="rounded-pill form-control form-round" id="exampleInputConfPassword1" onChange={(e)=>{setConfirmPassword(e.target.value)}} placeholder="Confirm Password"/>
                                 </div>
+                                <h5 className='text-white'>{message}</h5>
                                 <button type="submit" className="btn btn-primary btn-block rounded-pill form-round" onClick={(e)=>{handleSignup(e)}}
                                 disabled={name&&phone&&email&&dateOfBirth&&gender&&userType&&password&&confirmPassword?false:true}
                                 >SignUp</button>

@@ -39,6 +39,8 @@ function Login(){
                 )
                 if(user.user_type==='Student'){
                     history.push('/studentdashboard')
+                }else if(user.user_type==='CDC'){
+                    history.push('/cdcdashboard')
                 }else{
                     history.push('/')
                 }

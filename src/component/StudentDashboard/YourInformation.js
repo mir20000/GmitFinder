@@ -129,7 +129,7 @@ function YourInformation(props) {
                                     <td>{result.degree}</td>
                                     <td>{result.org_name}</td>
                                     <td>{result.marks}</td>
-                                    <td>{((result.start_date).split("T"))[0]}</td>
+                                    <td>{result.start_date?((result.start_date).split("T"))[0]:null}</td>
                                     <td>{((result.end_date).split("T"))[0]}</td>
                                    
                                 </tr>
